@@ -1,5 +1,5 @@
 /* ------------------------------------------------------------------------
-  Template Name : CoolBlue
+	Template Name : CoolBlue
 	Template Code : S-0031
 	Version : 1.1
 	Author : Erwin Aligam
@@ -41,11 +41,11 @@ body {
 
 h1, h2, h3,
 h4, h5, h6 {
-    color: #8181F7;
+    color: 
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;
-    text-shadow: rgba(255,255,255,0.5) 0px 3px 3px;
+    /*text-shadow: rgba(255,255,255,0.5) 0px 3px 3px;*/
 }
 
 h1 {font-size: 28px; margin: 0; padding: 0}
@@ -82,10 +82,11 @@ h5, h6 {
 }
 
 #body {
-    background-color: #efeeef;
+    background-color: #FFFFFF;
     clear: both;
-    padding-bottom: 35px;
-    min-height: 500px;
+    min-height: auto;
+    padding-bottom: 20px;
+    border-bottom: solid 5px #50E01B;
 }
 
 #body .content-wrapper {padding: 15px;}
@@ -115,41 +116,43 @@ html {
 body {
 	font: 15px/24px Georgia, Serif;
 	color: #454545;
-   	background: url(../images/bg.png);
+    background-color: #696969;
+   	/*background: url(../images/bg.png);*/
 }
+
+    body h1 {
+        font-family: 'Sonsie One', cursive;
+    }
 /* Links */
 a:link, a:visited {
 	text-decoration: none;
-	color: #147DB6;
+	color: #FFFFFF;
     outline: 0;
 }
 a:hover, a:focus, a:active {
-  color: #CC3300;
+  color: #707070;
 }
-a:link.more, a:visited.more {
+.more {
     font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Sans-serif;
    	float: left;
 	margin: 10px 5px 50px 0px;
 	padding: 6px 10px;
-	border: 1px solid #2177A5;
-	background-color: #227bad;
-	color: #fff;
+    text-align: center;
+	border: 1px solid green;
+	background-color: #25D115;
+	color: #FFFFFF;
     font-size: 13px;
-
     text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
-
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     border-radius: 3px;
-
     box-shadow: 0px 1px 2px rgba(0,0,0,0.3), inset 0 1px 0 #3CA5D2;
     -moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.3), inset 0 1px 0 #3CA5D2;
     -webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.3), inset 0 1px 0 #3CA5D2;
 }
 a:hover.more {
-	border:  1px  solid #B32D00;
+	border: 1px solid #B32D00;
 	background-color: #CC3300;
-
     box-shadow: 0px 1px 2px rgba(0,0,0,0.3), inset 0 1px 0 #FF7242;
     -moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.3), inset 0 1px 0 #FF7242;
     -webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.3), inset 0 1px 0 #FF7242;
@@ -228,12 +231,21 @@ form input,
 form select,
 form textarea {
     color: #999;
-    background: #fff;
-	border-width: 1px;
+    width: 200px;
+    background: #ffffff;
+	border-width: 3px;
+    border-radius: 8px 8px;
+    -moz-border-radius: 8px;
+ -webkit-border-radius: 8px;
 	border-style: solid;
-  	border-color: #DCDEE2 #E9EBED #E9EBED #DCDEE2;
+  	border-color: #A6A6A6;
 	font: 13px 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Sans-serif;
+    float: none;
+    display:block;
+    margin: 10px auto;
+    padding: 5px;
 }
+
 form textarea {
     height: 325px;
 }
@@ -242,6 +254,7 @@ form select:focus,
 form textarea:focus {
 	background: #EEF5F9;
     color: #666666;
+    border: 3px solid ;
 }
 form input.button {
    	height: 36px;
@@ -318,7 +331,8 @@ header {
 #main {
     margin: 40px 0 10px 0;
     padding: 0;
-	width: 725px;
+	width: 100px;
+    border: 1px solid red;
 }
 #main .main-content {
     padding-right: 30px;
@@ -330,6 +344,7 @@ header {
 #extra-wrap {
 	width: 100%;
 	color: #C2DBE7;
+    background-color: #A6A6A6;
     padding-bottom: 24px;
 	border-top: #164F74;
 }
@@ -444,11 +459,10 @@ header div.subscribe {
     font-size: 12px;
     font-weight: bold;
     line-height: 30px;
-   	width: 150px;
+   	width: 180px;
     height: 30px;
     color: #BEBEBE;
-    text-shadow: 0 -1px 0 rgba(10, 10, 10, 1);
-    padding-left: 28px;
+    /*padding-left: 28px;*/
     right: 68px;
     top: 18px;
 }
@@ -456,6 +470,8 @@ header div.subscribe a {
     padding-right: 3px;
     padding-left: 3px;
     color: #fff;
+    float: left;
+    padding-right: 15px;
 }
 header div.subscribe a:hover,
 header div.subscribe a:active {
@@ -466,9 +482,6 @@ header div.subscribe a:active {
 header form#quick-search {
   	position: absolute;
   	background: transparent;
-  	border: none;
-  	margin: 0;
-    padding: 0;
   	width: 250px;
     top: 110px;
     right: 0;
@@ -524,6 +537,7 @@ header .search button.btn {
 ----------------------------------------------------------------------------- */
 #extra p {
     font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Sans-serif;
+    color: #ffffff;
 }
 #extra strong, #extra em, #extra b, #extra i {
     font-family:  'Lucida Grande', 'Lucida Sans', 'Lucida Sans Unicode', Verdana, sans-serif;
@@ -534,9 +548,10 @@ header .search button.btn {
 #extra a:hover { color: #99CCFF; }
 
 #extra h3 {
+    padding-top: 25px;
     font: bold 18px  'Lucida Grande', 'Lucida Sans', 'Lucida Sans Unicode', Verdana, Sans-Serif;
     margin-bottom: 15px;
-	color: #fff;
+	color: #ffffff;
 }
 
 /* Recent Comments */
@@ -571,7 +586,7 @@ header .search button.btn {
 	margin-left: 0;
 }
 .footer-list ul li {
-    border-bottom: 1px solid #326B8D;
+    border-bottom: 1px solid #848484;
 }
 .footer-list ul li a:link,
 .footer-list ul li a:visited {
@@ -584,6 +599,10 @@ header .search button.btn {
 .footer-list ul li a:hover { color: #99CCFF; }
 
 /* Subscribe Stuff */
+.subscribe {
+    float: right;
+}
+
 ul.subscribe-stuff {
     list-style: none;
     margin: 0;
@@ -591,7 +610,7 @@ ul.subscribe-stuff {
 }
 ul.subscribe-stuff li {
     float: left;
-    margin: 0 3px 12px 0;
+    margin: 0 3px 0 0;
     padding: 0;
 }
 ul.subscribe-stuff li img {
@@ -769,17 +788,6 @@ article p
     text-shadow: rgba(255,255,255,0.5) 0px 3px 3px;
 }
 
-aside {
-    float: right;
-    width: 25%;
-}
-
-    aside ul {
-        list-style: none;
-        padding: 0;
-    }
-
-
 .label {
     font-weight: 700;
 }
@@ -824,7 +832,7 @@ aside {
 /* login
 ----------------------------------------------------------*/
 #login {
-    background-color: #E0E6F8; width: 100%; height: 30px;
+    width: 100%; height: 30px;
     display: block;
     font-size: .85em;
     padding-top: 15px;
@@ -888,17 +896,17 @@ ul#menu {
 ----------------------------------------------------------*/
 /* featured */
 .featured {
-    background-color: #fff;
+    
 }
 
     .featured .content-wrapper {
-        background-color: #7ac0da;
+        /*/background-color: #7ac0da;
         background-image: -ms-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
         background-image: -o-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
         background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #7ac0da), color-stop(1, #a4d4e6));
         background-image: -webkit-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
         background-image: linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
-        color: #3e5667;
+        color: #3e5667;*/
         padding: 20px 40px 30px 40px;
     }
 
@@ -960,11 +968,16 @@ section.feature {
         width: 250px;
     }
 
-    #loginForm input[type="checkbox"],
-    #loginForm input[type="submit"],
-    #loginForm input[type="button"],
-    #loginForm button {
-        width: auto;
+    input[type="submit"] {
+        width: 210px;
+        border: 3px solid #969696;
+        background-color: #19E620;
+        color: #FFFFFF;
+        cursor: pointer;
+    }
+
+   input[type="submit"]:hover {
+        background-color: #10C916;
     }
 
 #socialLoginForm {
@@ -1037,18 +1050,20 @@ label {
     display: block;
     font-size: 12px;
     font-weight: 600;
+    padding-left: 3px;
 }
 
 label.checkbox {
-    display: inline;
+   display: inline;
 }
 
     input[type="checkbox"] {
         background: transparent;
         border: inherit;
         width: auto;
+        display: inline;
     }
-
+    
 
 /* info and errors */
 .message-info {
@@ -1104,4 +1119,7 @@ input[type="checkbox"].input-validation-error {
     display: none;
 }
 
+title h2 {
+    border: 1px solid red;
+}
 
