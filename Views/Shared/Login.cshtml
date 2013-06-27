@@ -1,1 +1,53 @@
 //
+@model Canopy.Models.LoginModel
+<div style="display: block;margin: 0 auto;width:1000px;height:background:url(@Url.Content("~/Images/login_bg.jpg")) no-repeat">
+<!--<div style="margin: 5px 25px 0px 0px; width:150px;height:64px;float: right">
+    <a href="http://www.facebook.com/sharer.php?u=http://canopy.cloudapp.net" target="_blank">
+        <img src="@Url.Content("~/Images/facebook.png")" width="64" height="64" />
+    </a>
+    
+    <a href="https://twitter.com/share?text=Check%20out%20this%20site:&url=http://canopy.cloudapp.net" target="_blank">
+        <img src="@Url.Content("~/Images/twitter.png")" width="64" height="64" />
+    </a>
+    
+</div> -->
+<div style="margin: 0px 0px 0px 0px;width: 400px;float: left;text-align: center;">
+    <img src="~/Images/canopy-tech-logo-std.png" alt="Canopy logo" height="300" width="390">
+<!--<h1>Canopy Portal</h1>
+<h4>- Access - Aggregate - Cannchronize -</h4>-->
+</div>
+
+
+<div style="width: 600px;float: left;text-align:center;padding-top: 65px">
+
+<div style="float: none;clear: both"></div>
+    <h1>Login</h1>
+@using (Html.BeginForm("Login","Account",new { ReturnUrl = ViewBag.ReturnUrl })) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    
+                @Html.TextBoxFor(m => m.UserName)
+                @Html.ValidationMessageFor(m => m.UserName)
+                @Html.PasswordFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password)
+                <br />
+                @Html.CheckBoxFor(m => m.RememberMe)
+                @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+                <center><input type="submit" value="Log in" /></center>
+}
+</div>
+
+<div style="float: none;clear: both"></div>
+
+<!--<div style="margin: 10px 0px 0px 0px;width: 1000px;color:#8181F7;float: left">
+    <div style="margin: 0px 0px 0px 180px;width: 140px;color:#8181F7;float: left">
+    @Html.ActionLink("About", "About")
+    @Html.ActionLink("Contact", "Contact")
+    @Html.ActionLink("Admin login page", "AdminLogin", "Account")
+    </div>
+    <div style="margin: 0px 0px 0px 465px;width: 80px;color:#8181F7;float: left">
+    @Html.ActionLink("Register", "Register","Account")
+    </div>
+</div>-->
+
+</div>
