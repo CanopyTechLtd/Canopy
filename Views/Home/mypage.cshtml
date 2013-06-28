@@ -1,0 +1,57 @@
+<script language="javascript" type="text/javascript">
+    $(document).ready(function () {
+        $('#Data1').click(function (event) {
+            event.preventDefault();
+            $('#ajaxresult').html('<center><img src="../Images/spinner.gif"/></center><center><h4>accessing VMS server 1<br/>please wait...</h4></center>');
+
+            var url = $(this).attr('href');
+            $('#ajaxresult').load(url);
+        });
+
+        $('#Data2').click(function (event) {
+            event.preventDefault();
+            $('#ajaxresult').html('<center><img src="../Images/spinner.gif"/></center><center><h4>accessing VMS server 2<br/>please wait...</h4></center>');
+
+            var url = $(this).attr('href');
+            $('#ajaxresult').load(url);
+        });
+
+        $('#Combined').click(function (event) {
+            event.preventDefault();
+            $('#ajaxresult').html('<center><img src="../Images/spinner.gif"/></center><center><h4>accessing VMS server 1 & 2<br/>please wait...</h4></center>');
+
+            var url = $(this).attr('href');
+            $('#ajaxresult').load(url);
+        });
+
+    });
+</script>
+<div id="title">
+    <h2>Job Box</h2>
+</div>
+
+<div class="float-left" id="main">
+<div class="more">
+    @Html.ActionLink("VMS system 1", "VMS1", null, new { id = "Data1" })
+</div>
+<p>
+    <div class="more">
+    @Html.ActionLink("VMS system 2", "VMS2", null, new { id = "Data2" })
+        </div>
+</p>
+<p>
+    <div class="more">
+    @Html.ActionLink("Combined inbox", "Combined", null, new { id = "Combined" })
+        </div>
+</p>
+</div>
+<div class="float-right">
+    <h3>@ViewBag.Message</h3>    
+</div>
+
+<div id="ajaxresult" style="width: 900px;height: auto; padding: 10px">
+    <center><img src="@Url.Content("~/Images/folders_in_cloud.png")" /></center>
+    <center><h4><<< My inbox >>></h4></center>
+</div>
+
+<!--<div style="clear: both"></div>-->
