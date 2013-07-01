@@ -1101,17 +1101,18 @@ fieldset legend {color: green; font-size: 18px}
 .accessBox 
 {
     color: #ff003c;
-    width: 210px;
-    height: 80px;
+    width: 180px;
+    height: 130px;
     float: left;
-    
 }
 
+.accessBox label { margin: 0; padding: 0; }
 .accessBox input[type="submit"] {
     border: 3px solid #969696;
     background-color: #19E620;
     color: #FFFFFF;
-    width: 150px;
+    width: 165px;
+    margin-top: 63px;
     cursor: pointer;
 }
 
@@ -1121,7 +1122,7 @@ fieldset legend {color: green; font-size: 18px}
 
 .accessBox input {
     color: #999;
-    width: 180px;
+    width: 155px;
     background: #ffffff;
 	border-width: 3px;
     border-radius: 8px 8px;
@@ -1147,11 +1148,18 @@ fieldset legend {color: green; font-size: 18px}
 .accessBox label span {
     color: #1980AF;
 }
-
+.accessBox2 {
+    color: #ff003c;
+    width: 180px;
+    height: 130px;
+    float: left;
+}
 .accessBox2 input[type="submit"] {
     border: 3px solid #969696;
     background-color: red;
     color: #FFFFFF;
+    width: 165px;
+    margin-top: 63px;
     cursor: pointer;
 }
 
