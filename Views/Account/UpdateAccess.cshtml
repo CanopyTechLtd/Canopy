@@ -1,0 +1,55 @@
+@model Canopy.Models.DecodedData
+
+<fieldset>
+        <legend>@Model.TableName</legend>
+@using (Html.BeginForm()) {
+
+        <div class="accessBox">
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Username)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Username)
+            @Html.ValidationMessageFor(model => model.Username)
+        </div>
+        </div>
+
+        <div class="accessBox">
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Password)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+        </div>
+
+        <div class="accessBox">
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ConfirmPassword)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ConfirmPassword)
+            @Html.ValidationMessageFor(model => model.ConfirmPassword)
+        </div>
+        </div>
+
+        @Html.HiddenFor(model => model.TableName)
+
+        <div class="accessBox">
+            <input type="submit" value="Update" />
+        </div>
+}
+
+@if (Model.Username != "not set")
+{
+using (Html.BeginForm("DeleteAccess","Account",FormMethod.Post)) {
+    @Html.HiddenFor(model => model.Username)
+    @Html.HiddenFor(model => model.TableName)
+
+    <div class="accessBox">
+        <input type="submit" value="Delete" />
+    </div>
+}
+}
+</fieldset>
