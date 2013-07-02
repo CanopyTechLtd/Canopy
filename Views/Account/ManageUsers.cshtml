@@ -1,0 +1,91 @@
+@model Canopy.Models.sysAdminDetails
+
+@{
+    ViewBag.Title = "Users Manager";
+}
+
+<div style="height: 40px">
+    <h1 style="color: black">User manager</h1>
+</div>
+<div style="height: 40px; font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Sans-serif">
+    <h1 style="float: left; color: black; font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Sans-serif">Welcome @Model.Username, </h1>
+    <h1 style="float: right; font-size: 16px">@Html.ActionLink("Sign Out as system administrator", "sysLogOut","Account")</h1>
+</div>
+<div id="userManager">
+    <h3>@ViewBag.feedback</h3>
+<fieldset>
+    <legend>User Manager</legend>
+    <div style="width: 143px; height: 30px; text-align: center; float: left">Username</div>
+    <div style="width: 143px; height: 30px; text-align: center; float: left">Password</div>
+    <div style="width: 143px; height: 30px; text-align: center; float: left">Confirm password</div>
+    <div style="float: none; clear: both"></div>
+    @foreach (var x in Model.myUsers)
+    {
+        Html.RenderAction("UpdateUser", new { username = x.UserName, Password = "", ConfirmPassword = "",  mySysAdmin = Model.ID });
+    }
+
+    @for (int i = 0; i < Model.LicenceCount-Model.myUsers.Count(); i++)
+    {
+        Html.RenderAction("Register", new { UserName = "", mySysAdmin = Model.ID });
+    }
+</fieldset>
+</div>
+
+<div style="width:300px; float: right;">
+<fieldset style="width: 280px">
+    <legend>My profile</legend>
+    <table>
+        <tr><td>Location: </td><td>@Model.Location</td></tr>
+        <tr><td>Phone: </td><td>@Model.Phone</td></tr>
+        <tr><td>Email: </td><td>@Model.Email</td></tr>
+        <tr><td>Website: </td><td>@Model.Website</td></tr>
+    </table>
+</fieldset>
+
+<fieldset style="width: 280px">
+    <legend>My subscription</legend>
+    <table>
+        <tr><td>Licences: </td><td>@Model.LicenceCount</td></tr>
+        <tr><td>Started: </td><td>@Model.Subscribed</td></tr>
+        <tr><td>Renewal: </td><td>@Model.Renewal</td></tr>
+    </table>
+</fieldset>
+
+<fieldset style="width: 280px">
+    <legend>My VMS subscriptions (@Model.myVMS.Count())</legend>
+    <ul>
+        @foreach (var vms in Model.myVMS) {
+            <li>@vms</li>
+        }
+    </ul>
+</fieldset>
+
+
+<fieldset style="width: 280px">
+    <legend>Company profile</legend>
+    <table>
+        <tr><td>Company: </td><td>@Model.myCompanyDetails.Company</td></tr>
+        <tr><td>Location: </td><td>@Model.myCompanyDetails.Location</td></tr>
+        <tr><td>Primary contact: </td><td>@Model.myCompanyDetails.PrimaryContact</td></tr>
+        <tr><td>Secondary contact: </td><td>@Model.myCompanyDetails.SecondaryContact</td></tr>
+        <tr><td>Phone: </td><td>@Model.myCompanyDetails.Phone</td></tr>
+        <tr><td>Email: </td><td>@Model.myCompanyDetails.Email</td></tr>
+        <tr><td>Website: </td><td>@Model.myCompanyDetails.Website</td></tr>
+    </table>
+</fieldset>
+
+
+<fieldset style="width: 280px">
+    <legend>Assigned users (@Model.myUsers.Count()/@Model.LicenceCount)</legend>
+    <table>
+        @foreach (var x in Model.myUsers)
+        {
+            <tr><td>@x.UserName</td></tr>
+        }
+    </table>
+</fieldset>
+
+
+</div>
+
+<div style="float: none; clear: both"></div>
